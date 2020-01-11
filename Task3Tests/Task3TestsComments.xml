@@ -1,0 +1,1140 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Task3Tests</name>
+    </assembly>
+    <members>
+        <member name="T:Task3.Tests.FigureCuttingTests">
+            <summary> Class testing the cutting of the figure. Partial class. </summary>
+            <summary> Class testing the cutting of the figure. Partial class. </summary>
+        </member>
+        <member name="M:Task3.Tests.FigureCuttingTests.CircleCutting_CircleFromCircle_MaterialPaper">
+            <summary> Сircle from circle. </summary>
+            <arrange> 
+            The original figure is a circle with radius = 2.5
+            The cut figure is a circle with radius = 1.5
+            </arrange>
+            <assert> Cut circle </assert>
+        </member>
+        <member name="M:Task3.Tests.FigureCuttingTests.CircleCutting_CircleFromCircle_CutException">
+            <summary> Сircle from circle. </summary>
+            <arrange> 
+            The original figure is a circle with radius = 2.5
+            The cut figure is a circle with radius = 3.5
+            </arrange>
+            <assert> Cut exception: You can not cut such a circle. Try with a smaller circle. </assert>
+        </member>
+        <member name="M:Task3.Tests.FigureCuttingTests.CircleCutting_RectangleFromCircle_MaterialPaper">
+            <summary> Rectangle from circle. </summary>
+            <arrange> 
+            The original figure is a circle with radius = 2.5
+            The cut figure is a rectangle with length = 2.0 and width = 1.5
+            </arrange>
+            <assert> Cut rectangle </assert>
+        </member>
+        <member name="M:Task3.Tests.FigureCuttingTests.CircleCutting_RectangleFromCircle_CutException">
+            <summary> Rectangle from circle. </summary>
+            <arrange> 
+            The original figure is a circle with radius = 0.5
+            The cut figure is a rectangle with length = 2.0 and width = 1.5
+            </arrange>
+            <assert> Cut exception: You can not cut such a rectangle. Try with a smaller rectangle. </assert>
+        </member>
+        <member name="M:Task3.Tests.FigureCuttingTests.CircleCutting_SquareFromCircle_MaterialPaper">
+            <summary> Square from circle. </summary>
+            <arrange> 
+            The original figure is a circle with radius = 2.5
+            The cut figure is a square with side = 2.0
+            </arrange>
+            <assert> Cut square </assert>
+        </member>
+        <member name="M:Task3.Tests.FigureCuttingTests.CircleCutting_SquareFromCircle_CutException">
+            <summary> Square from circle. </summary>
+            <arrange> 
+            The original figure is a circle with radius = 0.5
+            The cut figure is a square with side = 2.0
+            </arrange>
+            <assert> Cut exception: You can not cut such a square. Try with a smaller square. </assert>
+        </member>
+        <member name="M:Task3.Tests.FigureCuttingTests.CircleCutting_TrapeziumFromCircle_MaterialPaper">
+            <summary> Trapezium from circle. </summary>
+            <arrange> 
+            The original figure is a circle with radius = 2.5
+            The cut figure is a trapezium with baseA = 2.0 and baseB = 1.2 and height = 1.5
+            </arrange>
+            <assert> Cut trapezium </assert>
+        </member>
+        <member name="M:Task3.Tests.FigureCuttingTests.CircleCutting_TrapeziumFromCircle_CutException">
+            <summary> Trapezium from circle. </summary>
+            <arrange> 
+            The original figure is a circle with radius = 0.5
+            The cut figure is a trapezium with baseA = 2.0 and baseB = 1.2 and height = 2.0
+            </arrange>
+            <assert> Cut exception: You can not cut such a trapezium. Try with a smaller trapezium. </assert>
+        </member>
+        <member name="M:Task3.Tests.FigureCuttingTests.CircleCutting_TriangleFromCircle_MaterialPaper">
+            <summary> Triangle from circle. </summary>
+            <arrange> 
+            The original figure is a circle with radius = 2.5
+            The cut figure is a triangle with sideA = 2.0 and sideB = 2.0 ande SideC = 2.0
+            </arrange>
+            <assert> Cut triangle </assert>
+        </member>
+        <member name="M:Task3.Tests.FigureCuttingTests.CircleCutting_TriangleFromCircle_CutException">
+            <summary> Triangle from circle. </summary>
+            <arrange> 
+            The original figure is a circle with radius = 1.0
+            The cut figure is a triangle with sideA = 2.0 and sideB = 2.0 ande SideC = 2.0
+            </arrange>
+            <assert> Cut exception: You can not cut such a triangle. Try with a smaller triangle. </assert>
+        </member>
+        <member name="M:Task3.Tests.FigureCuttingTests.RectangleCutting_CircleFromRectangle_MaterialPaper">
+            <summary> Сircle from rectangle. </summary>
+            <arrange> 
+            The original figure is a rectangle with length = 3.5 and width = 2.0
+            The cut figure is a circle with radius = 1.0
+            </arrange>
+            <assert> Cut circle </assert>
+        </member>
+        <member name="M:Task3.Tests.FigureCuttingTests.RectangleCutting_CircleFromRectangle_CutException">
+            <summary> Сircle from rectangle. </summary>
+            <arrange> 
+            The original figure is a rectangle with length = 3.5 and width = 2.0 
+            The cut figure is a circle with radius = 3.0
+            </arrange>
+            <assert> Cut exception: You can not cut such a circle. Try with a smaller circle. </assert>
+        </member>
+        <member name="M:Task3.Tests.FigureCuttingTests.RectangleCutting_RectangleFromRectangle_MaterialPaper">
+            <summary> Rectangle from rectangle. </summary>
+            <arrange> 
+            The original figure is a rectangle with length = 3.5 and width = 2.0
+            The cut figure is a rectagle width length = 2.0 and width = 1.0
+            </arrange>
+            <assert> Cut rectangle </assert>
+        </member>
+        <member name="M:Task3.Tests.FigureCuttingTests.RectangleCutting_RectangleFromRectangle_CutException">
+            <summary> Rectangle from rectangle. </summary>
+            <arrange> 
+            The original figure is a rectangle with length = 1.5 and width = 1.0
+            The cut figure is a rectangle with length = 3.0 and width = 2.5
+            </arrange>
+            <assert> Cut exception: ou can not cut such a rectangle. Try with a smaller rectangle. </assert>
+        </member>
+        <member name="M:Task3.Tests.FigureCuttingTests.RectangleCutting_SquareFromRectangle_MaterialPaper">
+            <summary> Square from rectangle. </summary>
+            <arrange> 
+            The original figure is a rectangle with length = 3.5 and width = 2.0
+            The cut figure is a square with side = 1.8
+            </arrange>
+            <assert> Cut square </assert>
+        </member>
+        <member name="M:Task3.Tests.FigureCuttingTests.RectangleCutting_SquareFromRectangle_CutException">
+            <summary> Square from rectangle. </summary>
+            <arrange> 
+            The original figure is a rectangle with length = 1.5 and width = 1.0
+            The cut figure is a square with side = 4.2
+            </arrange>
+            <assert> Cut exception: You can not cut such a square. Try with a smaller square. </assert>
+        </member>
+        <member name="M:Task3.Tests.FigureCuttingTests.RectangleCutting_TrapeziumFromRectangle_MaterialPaper">
+            <summary> Trapezium from rectangle. </summary>
+            <arrange> 
+            The original figure is a rectangle with length = 4.5 and width = 3.5
+            The cut figure is a trapezium with baseA = 2.0 and baseB = 1.5 and height = 3.0
+            </arrange>
+            <assert> Cut trapezium </assert>
+        </member>
+        <member name="M:Task3.Tests.FigureCuttingTests.RectangleCutting_TrapeziumFromRectangle_CutException">
+            <summary> Trapezium from rectangle. </summary>
+            <arrange> 
+            The original figure is a rectangle with length = 1.5 and width = 1.0
+            The cut figure is a trapezium with baseA = 2.0 and baseB = 1.5 and height = 3.0
+            </arrange>
+            <assert> Cut exception: You can not cut such a trapezium. Try with a smaller trapezium. </assert>
+        </member>
+        <member name="M:Task3.Tests.FigureCuttingTests.RectangleCutting_TriangleFromRectangle_MaterialPaper">
+            <summary> Triangle from rectangle. </summary>
+            <arrange> 
+            The original figure is a rectangle with length = 4.5 and width = 3.5
+            The cut figure is a triangle with sideA = 1.5 and sideB = 1.5 and sideC = 1.5
+            </arrange>
+            <assert> Cut triangle </assert>
+        </member>
+        <member name="M:Task3.Tests.FigureCuttingTests.RectangleCutting_TriangleFromRectangle_CutException">
+            <summary> Triangle from rectangle. </summary>
+            <arrange> 
+            The original figure is a rectangle with length = 1.2 and width = 1.0
+            The cut figure is a triangle with sideA = 1.5 and sideB = 1.5 and sideC = 1.5
+            </arrange>
+            <assert> Cut exception: You can not cut such a triangle. Try with a smaller triangle. </assert>
+        </member>
+        <member name="M:Task3.Tests.FigureCuttingTests.SquareCutting_CircleFromSquare_MaterialPaper">
+            <summary> Circle from square. </summary>
+            <arrange> 
+            The original figure is a square with side = 5.5
+            The cut figure is a circle with radius = 1.75
+            </arrange>
+            <assert> Cut circle </assert>
+        </member>
+        <member name="M:Task3.Tests.FigureCuttingTests.SquareCutting_CircleFromSquare_CutException">
+            <summary> Circle from square. </summary>
+            <arrange> 
+            The original figure is a square with side = 2.2
+            The cut figure is a circle with radius = 1.6
+            </arrange>
+            <assert> Cut exception: You can not cut such a circle. Try with a smaller circle. </assert>
+        </member>
+        <member name="M:Task3.Tests.FigureCuttingTests.SquareCutting_RectangleFromSquare_MaterialPaper">
+            <summary> Rectangle from square. </summary>
+            <arrange> 
+            The original figure is a square with side = 4.5
+            The cut figure is a rectangle with length = 2.5 and width = 2.0
+            </arrange>
+            <assert> Cut rectangle </assert>
+        </member>
+        <member name="M:Task3.Tests.FigureCuttingTests.SquareCutting_RectangleFromSquare_CutException">
+            <summary> Rectangle from square. </summary>
+            <arrange> 
+            The original figure is a square with side = 2.5
+            The cut figure is a rectangle with length = 3.0 and width = 1.5
+            </arrange>
+            <assert> Cut exception: You can not cut such a rectangle. Try with a smaller rectangle. </assert>
+        </member>
+        <member name="M:Task3.Tests.FigureCuttingTests.SquareCutting_SquareFromSquare_MaterialPaper">
+            <summary> Square from square. </summary>
+            <arrange> 
+            The original figure is a square with side = 4.5
+            The cut figure is a square with side = 3.5
+            </arrange>
+            <assert> Cut square </assert>
+        </member>
+        <member name="M:Task3.Tests.FigureCuttingTests.SquareCutting_SquareFromSquare_CutException">
+            <summary> Square from square. </summary>
+            <arrange> 
+            The original figure is a square with side = 2.5
+            The cut figure is a square with side = 3.5
+            </arrange>
+            <assert> Cut exception: "You can not cut such a square. Try with a smaller square. </assert>
+        </member>
+        <member name="M:Task3.Tests.FigureCuttingTests.SquareCutting_TrapeziumFromSquare_MaterialPaper">
+            <summary> Trapezium from square. </summary>
+            <arrange> 
+            The original figure is a square with side = 3.5
+            The cut figure is a trapezium with baseA = 2.0 and baseB = 1.5 and height = 2.0
+            </arrange>
+            <assert> Cut trapezium </assert>
+        </member>
+        <member name="M:Task3.Tests.FigureCuttingTests.SquareCutting_TrapeziumFromSquare_CutException">
+            <summary> Trapezium from square. </summary>
+            <arrange> 
+            The original figure is a square with side = 2.5
+            The cut figure is a trapezium with baseA = 3.0 and baseB = 1.5 and height = 2.0
+            </arrange>
+            <assert> Cut exception: You can not cut such a trapezium. Try with a smaller trapezium. </assert>
+        </member>
+        <member name="M:Task3.Tests.FigureCuttingTests.SquareCutting_TriangleFromSquare_MaterialPaper">
+            <summary> Triangle from square. </summary>
+            <arrange> 
+            The original figure is a square with side = 10.5
+            The cut figure is a triangle with sideA = 2.0 and sideB = 2.0 and sideC = 2.0
+            </arrange>
+            <assert> Cut triangle </assert>
+        </member>
+        <member name="M:Task3.Tests.FigureCuttingTests.SquareCutting_TriangleFromSquare_CutException">
+            <summary> Triangle from square. </summary>
+            <arrange> 
+            The original figure is a square with side = 1.5
+            The cut figure is a triangle with sideA = 2.5 and sideB = 2.5 and sideC = 2.5
+            </arrange>
+            <assert> Cut exception: You can not cut such a triangle. Try with a smaller triangle. </assert>
+        </member>
+        <member name="M:Task3.Tests.FigureCuttingTests.TrapeziumCutting_CircleFromTrapezium_MaterialPaper">
+            <summary> Сircle from trapezium. </summary>
+            <arrange> 
+            The original figure is a trapezium with baseA = 3.0 and baseB = 2.0 and height = 1.5
+            The cut figure is a circle with radius = 1.2
+            </arrange>
+            <assert> Cut circle </assert>
+        </member>
+        <member name="M:Task3.Tests.FigureCuttingTests.TrapeziumCutting_CircleFromTrapezium_CutException">
+            <summary> Сircle from trapezium. </summary>
+            <arrange> 
+            The original figure is a trapezium with baseA = 3.0 and baseB = 2.0 and height = 1.5
+            The cut figure is a circle with radius = 3.5
+            </arrange>
+            <assert> Cut exception: You can not cut such a circle. Try with a smaller circle. </assert>
+        </member>
+        <member name="M:Task3.Tests.FigureCuttingTests.TrapeziumCutting_RectangleFromTrapezium_MaterialPaper">
+            <summary> Rectangle from trapezium. </summary>
+            <arrange> 
+            The original figure is a trapezium with baseA = 3.0 and baseB = 2.0 and height = 1.5
+            The cut figure is a rectangle with length = 1.5 and width = 1.2
+            </arrange>
+            <assert> Cut rectangle </assert>
+        </member>
+        <member name="M:Task3.Tests.FigureCuttingTests.TrapeziumCutting_RectangleFromTrapezium_CutException">
+            <summary> Rectangle from trapezium. </summary>
+            <arrange> 
+            The original figure is a trapezium with baseA = 3.0 and baseB = 2.0 and height = 1.5
+            The cut figure is a rectangle with length = 3.5 and width = 2.2
+            </arrange>
+            <assert> Cut exception: You can not cut such a rectangle. Try with a smaller rectangle. </assert>
+        </member>
+        <member name="M:Task3.Tests.FigureCuttingTests.TrapeziumCutting_SquareFromTrapezium_MaterialPaper">
+            <summary> Square from trapezium. </summary>
+            <arrange> 
+            The original figure is a trapezium with baseA = 4.0 and baseB = 3.0 and height = 2.0
+            The cut figure is a square with side = 1.5
+            </arrange>
+            <assert> Cut square </assert>
+        </member>
+        <member name="M:Task3.Tests.FigureCuttingTests.TrapeziumCutting_SquareFromTrapezium_CutException">
+            <summary> Square from trapezium. </summary>
+            <arrange> 
+            The original figure is a trapezium with baseA = 4.0 and baseB = 3.0 and height = 2.0
+            The cut figure is a square with side = 5.5
+            </arrange>
+            <assert> Cut exception: You can not cut such a squre. Try with a smaller rectangle. </assert>
+        </member>
+        <member name="M:Task3.Tests.FigureCuttingTests.TrapeziumCutting_TrapeziumFromTrapezium_MaterialPaper">
+            <summary> Trapezium from trapezium. </summary>
+            <arrange> 
+            The original figure is a trapezium with baseA = 4.0 and baseB = 3.0 and height = 2.0
+            The cut figure is a trapezium with with baseA = 3.0 and baseB = 1.0 and height = 2.0
+            </arrange>
+            <assert> Cut trapezium </assert>
+        </member>
+        <member name="M:Task3.Tests.FigureCuttingTests.TrapeziumCutting_TrapeziumFromTrapezium_CutException">
+            <summary> Trapezium from trapezium. </summary>
+            <arrange> 
+            The original figure is a trapezium with baseA = 4.0 and baseB = 3.0 and height = 2.0
+            The cut figure is a trapezium with with baseA = 5.0 and baseB = 1.0 and height = 2.0
+            </arrange>
+            <assert> Cut exception: You can not cut such a trapezium. Try with a smaller trapezium. </assert>
+        </member>
+        <member name="M:Task3.Tests.FigureCuttingTests.TrapeziumCutting_TriangleFromTrapezium_MaterialPaper">
+            <summary> Triangle from trapezium. </summary>
+            <arrange> 
+            The original figure is a trapezium with baseA = 4.0 and baseB = 3.0 and height = 3.0
+            The cut figure is a triangle with with sideA = 3.0 and sideB = 3.0 and sideC = 3.0
+            </arrange>
+            <assert> Cut triangle </assert>
+        </member>
+        <member name="M:Task3.Tests.FigureCuttingTests.TrapeziumCutting_TriangleFromTrapezium_CutException">
+            <summary> Triangle from trapezium. </summary>
+            <arrange> 
+            The original figure is a trapezium with baseA = 4.0 and baseB = 3.0 and height = 3.0
+            The cut figure is a triangle with with sideA = 4.0 and sideB = 4.0 and sideC = 4.0
+            </arrange>
+            <assert> Cut exception: You can not cut such a triangle. Try with a smaller triangle. </assert>
+        </member>
+        <member name="M:Task3.Tests.FigureCuttingTests.TriangleCutting_CircleFromTriangle_MaterialPaper">
+            <summary> Circle from triangle. </summary>
+            <arrange> 
+            The original figure is a triangle with sideA = 3.0 and sideB = 3.0 and sideC = 3.0
+            The cut figure is a circle with radius = 0.75
+            </arrange>
+            <assert> Cut circle </assert>
+        </member>
+        <member name="M:Task3.Tests.FigureCuttingTests.TriangleCutting_CircleFromTriangle_CutException">
+            <summary> Circle from triangle. </summary>
+            <arrange> 
+            The original figure is a triangle with sideA = 3.0 and sideB = 3.0 and sideC = 3.0
+            The cut figure is a circle with radius = 3.0
+            </arrange>
+            <assert> Cut exception: You can not cut such a circle. Try with a smaller circle. </assert>
+        </member>
+        <member name="M:Task3.Tests.FigureCuttingTests.TriangleCutting_RectangleFromTriangle_MaterialPaper">
+            <summary> Rectangle from triangle. </summary>
+            <arrange> 
+            The original figure is a triangle with sideA = 3.0 and sideB = 3.0 and sideC = 3.0
+            The cut figure is a rectangle with length = 2.0 and width = 0.866
+            </arrange>
+            <assert> Cut rectangle </assert>
+        </member>
+        <member name="M:Task3.Tests.FigureCuttingTests.TriangleCutting_RectangleFromTriangle_CutException">
+            <summary> Rectangle from triangle. </summary>
+            <arrange> 
+            The original figure is a triangle with sideA = 3.0 and sideB = 3.0 and sideC = 3.0
+            The cut figure is a rectangle with length = 4.0 and width = 1.2
+            </arrange>
+            <assert> Cut exception: You can not cut such a rectangle. Try with a smaller rectangle. </assert>
+        </member>
+        <member name="M:Task3.Tests.FigureCuttingTests.TriangleCutting_SquareFromTriangle_MaterialPaper">
+            <summary> Square from triangle. </summary>
+            <arrange> 
+            The original figure is a triangle with sideA = 3.0 and sideB = 3.0 and sideC = 3.0
+            The cut figure is a square with side = 1.5
+            </arrange>
+            <assert> Cut square </assert>
+        </member>
+        <member name="M:Task3.Tests.FigureCuttingTests.TriangleCutting_SquareleFromTriangle_CutException">
+            <summary> Square from triangle. </summary>
+            <arrange> 
+            The original figure is a triangle with sideA = 3.0 and sideB = 3.0 and sideC = 3.0
+            The cut figure is a square with side = 1.5
+            </arrange>
+            <assert> Cut exception: You can not cut such a square. Try with a smaller square. </assert>
+        </member>
+        <member name="M:Task3.Tests.FigureCuttingTests.TriangleCutting_TrapeziumFromTriangle_MaterialPaper">
+            <summary> Trapezium from triangle. </summary>
+            <arrange> 
+            The original figure is a triangle with sideA = 3.0 and sideB = 3.0 and sideC = 3.0
+            The cut figure is a trapezium with baseA = 3.0 and baseB = 1.5 and height = 1.5
+            </arrange>
+            <assert> Cut trapezium </assert>
+        </member>
+        <member name="M:Task3.Tests.FigureCuttingTests.TriangleCutting_TrapeziumFromTriangle_CutException">
+            <summary> Trapezium from triangle. </summary>
+            <arrange> 
+            The original figure is a triangle with sideA = 3.0 and sideB = 3.0 and sideC = 3.0
+            The cut figure is a trapezium with baseA = 3.0 and baseB = 2.5 and height = 3.5
+            </arrange>
+            <assert> Cut exception: You can not cut such a trapezium. Try with a smaller trapezium. </assert>
+        </member>
+        <member name="M:Task3.Tests.FigureCuttingTests.TriangleCutting_TriangleFromTriangle_MaterialPaper">
+            <summary> Triangle from triangle. </summary>
+            <arrange> 
+            The original figure is a triangle with sideA = 3.0 and sideB = 3.0 and sideC = 3.0
+            The cut figure is a triangle with sideA = 2.5 and sideB = 2.5 and sideC = 2.5
+            </arrange>
+            <assert> Cut triangle </assert>
+        </member>
+        <member name="M:Task3.Tests.FigureCuttingTests.TriangleCutting_TriangleFromTriangle_CutException">
+            <summary> Triangle from triangle. </summary>
+            <arrange> 
+            The original figure is a triangle with sideA = 3.0 and sideB = 3.0 and sideC = 3.0
+            The cut figure is a triangle with sideA = 3.5 and sideB = 3.5 and sideC = 3.5
+            </arrange>
+            <assert> Cut exception: You can not cut such a triangle. Try with a smaller triangle. </assert>
+        </member>
+        <member name="T:Task3.Tests.FigurePaintingTests">
+            <summary> Class testing the coloring of the figure. </summary>
+        </member>
+        <member name="M:Task3.Tests.FigurePaintingTests.CirclePainting_MaterialPaper">
+            <summary> Сircle painting. </summary>
+            <arrange> 
+            Material = Paper
+            Color = Blue
+            </arrange>
+            <assert> Blue circle. </assert>
+        </member>
+        <member name="M:Task3.Tests.FigurePaintingTests.CircleRepainting_MaterialPaper_PaintException">
+            <summary> Сircle painting. </summary>
+            <arrange> 
+            Material = Paper
+            First Color = Blue
+            Second Color = Green
+            </arrange>
+            <assert> Paint exception: You can paint a paper figure only once. </assert>
+        </member>
+        <member name="M:Task3.Tests.FigurePaintingTests.CirclePainting_MaterialFilm_PaintException">
+            <summary> Сircle painting. </summary>
+            <arrange> 
+            Material = Film
+            color = Orange
+            </arrange>
+            <assert> Paint exception: The film can not be painted. </assert>
+        </member>
+        <member name="M:Task3.Tests.FigurePaintingTests.RectanglePainting_MaterialPaper">
+            <summary> Rectangle painting. </summary>
+            <arrange> 
+            Material = Paper
+            Color = Yellow
+            </arrange>
+            <assert> Yellow rectangle. </assert>
+        </member>
+        <member name="M:Task3.Tests.FigurePaintingTests.RectangleRepainting_MaterialPaper_PaintException">
+            <summary> Rectangle painting. </summary>
+            <arrange> 
+            Material = Paper
+            First Color = Yellow
+            Second Color = Green
+            </arrange>
+            <assert> Paint exception: You can paint a paper figure only once. </assert>
+        </member>
+        <member name="M:Task3.Tests.FigurePaintingTests.RectanglePainting_MaterialFilm_PaintException">
+            <summary> Rectangle painting. </summary>
+            <arrange> 
+            Material = Film
+            color = Red
+            </arrange>
+            <assert> Paint exception: The film can not be painted. </assert>
+        </member>
+        <member name="M:Task3.Tests.FigurePaintingTests.SquarePainting_MaterialPaper">
+            <summary> Square painting. </summary>
+            <arrange> 
+            Material = Paper
+            Color = Yellow
+            </arrange>
+            <assert> Yellow square. </assert>
+        </member>
+        <member name="M:Task3.Tests.FigurePaintingTests.SquareRepainting_MaterialPaper_PaintException">
+            <summary> Square painting. </summary>
+            <arrange> 
+            Material = Paper
+            First Color = Yellow
+            Second Color = Green
+            </arrange>
+            <assert> Paint exception: You can paint a paper figure only once. </assert>
+        </member>
+        <member name="M:Task3.Tests.FigurePaintingTests.SquarePainting_MaterialFilm_PaintException">
+            <summary> Square painting. </summary>
+            <arrange> 
+            Material = Film
+            color = Blue
+            </arrange>
+            <assert> Paint exception: The film can not be painted. </assert>
+        </member>
+        <member name="M:Task3.Tests.FigurePaintingTests.TrapeziumPainting_MaterialPaper">
+            <summary> Trapezium painting. </summary>
+            <arrange> 
+            Material = Paper
+            Color = Green
+            </arrange>
+            <assert> Green trapezium. </assert>
+        </member>
+        <member name="M:Task3.Tests.FigurePaintingTests.TrapeziumRepainting_MaterialPaper_PaintException">
+            <summary> Trapezium painting. </summary>
+            <arrange> 
+            Material = Paper
+            First Color = Yellow
+            Second Color = Green
+            </arrange>
+            <assert> Paint exception: You can paint a paper figure only once. </assert>
+        </member>
+        <member name="M:Task3.Tests.FigurePaintingTests.TrapeziumPainting_MaterialFilm_PaintException">
+            <summary> Trapezium painting. </summary>
+            <arrange> 
+            Material = Film
+            color = Green
+            </arrange>
+            <assert> Paint exception: The film can not be painted. </assert>
+        </member>
+        <member name="M:Task3.Tests.FigurePaintingTests.TrianglePainting_MaterialPaper">
+            <summary> Triangle painting. </summary>
+            <arrange> 
+            Material = Paper
+            Color = Green
+            </arrange>
+            <assert> Green triangle. </assert>
+        </member>
+        <member name="M:Task3.Tests.FigurePaintingTests.TriangleRepainting_MaterialPaper_PaintException">
+            <summary> Triangle painting. </summary>
+            <arrange> 
+            Material = Paper
+            First Color = Yellow
+            Second Color = Green
+            </arrange>
+            <assert> Paint exception: You can paint a paper figure only once. </assert>
+        </member>
+        <member name="M:Task3.Tests.FigurePaintingTests.TrianglePainting_MaterialFilm_PaintException">
+            <summary> Triangle painting. </summary>
+            <arrange> 
+            Material = Film
+            color = Green
+            </arrange>
+            <assert> Paint exception: The film can not be painted. </assert>
+        </member>
+        <member name="M:Task3.Tests.FigurePaintingTests.FigurePainting_MaterialPaperColorTransparent_PaintException">
+            <summary> Trying to make paper transparent. </summary>
+            <arrange> 
+            Material = Paper
+            color = transparent
+            </arrange>
+            <assert> Paint exception: The paper can not be transparent. </assert>
+        </member>
+        <member name="M:Task3.Tests.FigurePaintingTests.FigurePainting_MaterialPaperColorWhite_PaintException">
+            <summary> Trying to make paper white. </summary>
+            <arrange> 
+            Material = Paper
+            color = white
+            </arrange>
+            <assert> Paint exception: The paper is already white. </assert>
+        </member>
+        <member name="T:Task3.Tests.FiguresBoxTests">
+            <summary> Class testing the figure box. </summary>
+        </member>
+        <member name="F:Task3.Tests.FiguresBoxTests.figuresBox">
+            <summary> FigureBox instance. </summary>
+        </member>
+        <member name="M:Task3.Tests.FiguresBoxTests.FiguresBox_AddFigure">
+            <summary> Add figure. </summary>
+            <arrange> 
+            Instance of figure
+            </arrange>
+            <assert> Figure added to box. </assert>
+        </member>
+        <member name="M:Task3.Tests.FiguresBoxTests.FiguresBox_AddFigureMoreThan20_Exception">
+            <summary> Add more than 20 figures. </summary>
+            <arrange> 
+            Instance of figure
+            </arrange>
+            <assert> Exception: The box is full. Remove figures and try again. </assert>
+        </member>
+        <member name="M:Task3.Tests.FiguresBoxTests.FiguresBox_AddFigureWithSameCharacteristics_Exception">
+            <summary> Add a figure to a box that already exists </summary>
+            <arrange> 
+            Instance of figure
+            </arrange>
+            <assert> Exception: The figure with such characteristics already exists. </assert>
+        </member>
+        <member name="M:Task3.Tests.FiguresBoxTests.FiguresBox_ShowFigureByNumber">
+            <summary> Show figure by number. </summary>
+            <arrange> 
+            Instance of figure
+            </arrange>
+            <assert> Figure by number </assert>
+        </member>
+        <member name="M:Task3.Tests.FiguresBoxTests.FiguresBox_RemoveFigureByNumber">
+            <summary> Remove figure by number. </summary>
+            <arrange> 
+            Instance of figures
+            </arrange>
+            <assert> Remove figure by number </assert>
+        </member>
+        <member name="M:Task3.Tests.FiguresBoxTests.FiguresBox_RemoveFigureByNumber_Exception">
+            <summary> Remove nonexistent figure. </summary>
+            <arrange> 
+            Instance of figures
+            </arrange>
+            <assert> Exception: Figures with this number do not exist. </assert>
+        </member>
+        <member name="M:Task3.Tests.FiguresBoxTests.FiguresBox_RemoveAllCircles">
+            <summary> Remove all circles. </summary>
+            <arrange> 
+            Instance of figures
+            </arrange>
+            <assert> Remove all circles </assert>
+        </member>
+        <member name="M:Task3.Tests.FiguresBoxTests.FiguresBox_RemoveAllFilmFigure">
+            <summary> Remove all film figures. </summary>
+            <arrange> 
+            Instance of figures
+            </arrange>
+            <assert> Remove all film figures. </assert>
+        </member>
+        <member name="M:Task3.Tests.FiguresBoxTests.FiguresBox_ReplaceFigureByNumber">
+            <summary> Replace figure by number. </summary>
+            <arrange> 
+            Instance of figures
+            </arrange>
+            <assert> Replace figure by number. </assert>
+        </member>
+        <member name="M:Task3.Tests.FiguresBoxTests.FiguresBox_FindEquivalentFigure">
+            <summary> Find equivalent figure. </summary>
+            <arrange> 
+            Instance of figures
+            </arrange>
+            <assert> Find equivalent figure. </assert>
+        </member>
+        <member name="M:Task3.Tests.FiguresBoxTests.FiguresBox_FindEquivalentFigure_Exception">
+            <summary> Find equivalent figure. No equivalent figure found </summary>
+            <arrange> 
+            Instance of figures
+            </arrange>
+            <assert> Exception: Equivalent figure not found </assert>
+        </member>
+        <member name="M:Task3.Tests.FiguresBoxTests.FiguresBox_ShowQuantityFigures">
+            <summary> Show quantity figures. </summary>
+            <arrange> 
+            Instance of figures
+            </arrange>
+            <assert> Quantity figures. </assert>
+        </member>
+        <member name="M:Task3.Tests.FiguresBoxTests.FiguresBox_GetTotalArea">
+            <summary> Get total area. </summary>
+            <arrange> 
+            Instance of figures
+            </arrange>
+            <assert> Total area. </assert>
+        </member>
+        <member name="M:Task3.Tests.FiguresBoxTests.FiguresBox_GetTotalPerimeter">
+            <summary> Get total perimeter. </summary>
+            <arrange> 
+            Instances of figures.
+            </arrange>
+            <assert> Total perimeter. </assert>
+        </member>
+        <member name="M:Task3.Tests.FiguresBoxTests.FiguresBox_WriteXmlWriter_ReadStreamReader">
+            <summary> Write to Xml with XmlWriter and read from Xml with streamReader. </summary>
+            <arrange> 
+            Instances of figures.
+            </arrange>
+            <assert> Read/Write. </assert>
+        </member>
+        <member name="M:Task3.Tests.FiguresBoxTests.FiguresBox_WriteStreamWriter_ReadXmlReader">
+            <summary> Write to Xml with StreamWriter and read from Xml with XmlReader. </summary>
+            <arrange> 
+            Instances of figures.
+            </arrange>
+            <assert> Read/Write. </assert>
+        </member>
+        <member name="T:Task3.Tests.FigureTests">
+            <summary> Class testing the creation of figures. Partial class. </summary>
+            <remarks> Includes tests to create a circle, rectangle, square. </remarks>
+            <summary> Class testing the creation of figures. Partial class. </summary>
+            <remarks> Includes tests to create a trapezium, a triangle. </remarks>
+        </member>
+        <member name="M:Task3.Tests.FigureTests.CreateCircle_RadiusIsZeroMaterialFilm_ArgumentException">
+            <summary> Create circle. </summary>
+            <arrange> 
+            Radius = 0.0;
+            Material = Film;
+            </arrange>
+            <assert> Argument exception: The radius of the circle can not be equal zero or be less than zero. </assert>
+        </member>
+        <member name="M:Task3.Tests.FigureTests.CreateCircle_RadiusIsZeroMaterialPaper_ArgumentException">
+            <summary> Create circle. </summary>
+            <arrange> 
+            Radius = 0.0;
+            Material = Paper;
+            </arrange>
+            <assert> Argument exception: The radius of the circle can not be equal zero or be less than zero. </assert>
+        </member>
+        <member name="M:Task3.Tests.FigureTests.CreateCircle_RadiusIsZeroMaterialPaperPainted_ArgumentException">
+            <summary> Create circle. </summary>
+            <arrange> 
+            Radius = 0.0;
+            Material = Paper;
+            Color = Red;
+            </arrange>
+            <assert> Argument exception: The radius of the circle can not be equal zero or be less than zero. </assert>
+        </member>
+        <member name="M:Task3.Tests.FigureTests.CreateCircle_RadiusIsNegativeMaterialFilm_ArgumentException">
+            <summary> Create circle. </summary>
+            <arrange> 
+            Radius = -0.1;
+            Material = Film;
+            </arrange>
+            <assert> Argument exception: The radius of the circle can not be equal zero or be less than zero. </assert>
+        </member>
+        <member name="M:Task3.Tests.FigureTests.CreateCircle_RadiusIsNegativeMaterialPaper_ArgumentException">
+            <summary> Create circle. </summary>
+            <arrange> 
+            Radius = -1.5;
+            Material = Paper;
+            </arrange>
+            <assert> Argument exception: The radius of the circle can not be equal zero or be less than zero. </assert>
+        </member>
+        <member name="M:Task3.Tests.FigureTests.CreateCircle_RadiusIsNegativeMaterialPaperPainted_ArgumentException">
+            <summary> Create circle. </summary>
+            <arrange> 
+            Radius = -3.0;
+            Material = Paper;
+            Color = Red;
+            </arrange>
+            <assert> Argument exception: The radius of the circle can not be equal zero or be less than zero. </assert>
+        </member>
+        <member name="M:Task3.Tests.FigureTests.CreateCircle_RadiusIsPositiveMaterialFilm">
+            <summary> Create circle. </summary>
+            <arrange> 
+            Radius = positive value;
+            Material = Film;
+            </arrange>
+            <assert> Figure circle with parameters: radius = 3.0, material = film </assert>
+        </member>
+        <member name="M:Task3.Tests.FigureTests.CreateCircle_RadiusIsPositiveMaterialPaper">
+            <summary> Create circle. </summary>
+            <arrange> 
+            Radius = positive value;
+            Material = Paper;
+            </arrange>
+            <assert> Figure circle with parameters: radius = 5.5, material = paper </assert>
+        </member>
+        <member name="M:Task3.Tests.FigureTests.CreateCircle_RadiusIsPositiveMaterialPaperPainted">
+            <summary> Create circle. </summary>
+            <arrange> 
+            Radius = positive value;
+            Material = Paper;
+            Color = Blue;
+            </arrange>
+            <assert> Figure circle with parameters: radius = 12.1, material = paper, color = blue </assert>
+        </member>
+        <member name="M:Task3.Tests.FigureTests.CreateRectangle_LenghtAndWidthIsZeroMaterialFilm_ArgumentException">
+            <summary> Create rectangle. </summary>
+            <arrange> 
+            length = 0.0;
+            width = 0.0
+            Material = Film;
+            </arrange>
+            <assert> Argument exception: The length or width of the rectangle can not be equal zero or be less than zero. </assert>
+        </member>
+        <member name="M:Task3.Tests.FigureTests.CreateRectangle_LenghtAndWidthIsZeroMaterialPaper_ArgumentException">
+            <summary> Create rectangle. </summary>
+            <arrange> 
+            length = 0.0;
+            width = 0.0
+            Material = Paper;
+            </arrange>
+            <assert> Argument exception: The length or width of the rectangle can not be equal zero or be less than zero. </assert>
+        </member>
+        <member name="M:Task3.Tests.FigureTests.CreateRectangle_LenghtAndWidthIsZeroMaterialPaperPainted_ArgumentException">
+            <summary> Create rectangle. </summary>
+            <arrange> 
+            length = 0.0;
+            width = 0.0
+            Material = Paper;
+            Color = Yellow;
+            </arrange>
+            <assert> Argument exception: The length or width of the rectangle can not be equal zero or be less than zero. </assert>
+        </member>
+        <member name="M:Task3.Tests.FigureTests.CreateRectangle_LengthOrWidthIsNegativeMaterialFilm_ArgumentException">
+            <summary> Create rectangle. </summary>
+            <arrange> 
+            length = -3.0;
+            width = 2.0
+            Material = Film;
+            </arrange>
+            <assert> Argument exception: The length or width of the rectangle can not be equal zero or be less than zero. </assert>
+        </member>
+        <member name="M:Task3.Tests.FigureTests.CreateRectangle_LengthOrWidthIsNegativeMaterialPaper_ArgumentException">
+            <summary> Create rectangle. </summary>
+            <arrange> 
+            length = 3.0;
+            width = -2.0
+            Material = Paper;
+            </arrange>
+            <assert> Argument exception: The length or width of the rectangle can not be equal zero or be less than zero. </assert>
+        </member>
+        <member name="M:Task3.Tests.FigureTests.CreateRectangle_LengthOrWidthIsNegativeMaterialPaperPainted_ArgumentException">
+            <summary> Create rectangle. </summary>
+            <arrange> 
+            length = 3.0;
+            width = -2.0
+            Material = Paper;
+            Color = Red;
+            </arrange>
+            <assert> Argument exception: The length or width of the rectangle can not be equal zero or be less than zero. </assert>
+        </member>
+        <member name="M:Task3.Tests.FigureTests.CreateRectangle_LengthAndWidthIsEqual_ArgumentException">
+            <summary> Create rectangle. </summary>
+            <arrange> 
+            length = 3.0;
+            width = 3.0
+            Material = Paper;
+            Color = Red;
+            </arrange>
+            <assert> Argument exception: The length and width of the rectangle can not be equal and length should be more than width. </assert>
+        </member>
+        <member name="M:Task3.Tests.FigureTests.CreateRectangle_WidthGreaterThanLength_ArgumentException">
+            <summary> Create rectangle. </summary>
+            <arrange> 
+            length = 3.0;
+            width = 4.0
+            Material = Paper;
+            Color = Red;
+            </arrange>
+            <assert> Argument exception: The length and width of the rectangle can not be equal and length should be more than width. </assert>
+        </member>
+        <member name="M:Task3.Tests.FigureTests.CreateRectangle_LengthAndWidthIsPositiveMaterialFilm_ArgumentException">
+            <summary> Create rectangle. </summary>
+            <arrange> 
+            length = 4.0;
+            width = 3.0
+            Material = Film;
+            </arrange>
+            <assert> Figure rectangle with parameters: area = 12.0, material = film </assert>
+        </member>
+        <member name="M:Task3.Tests.FigureTests.CreateRectangle_LengthAndWidthIsPositiveMaterialPaper_ArgumentException">
+            <summary> Create rectangle. </summary>
+            <arrange> 
+            length = 4.0;
+            width = 3.0
+            Material = Paper;
+            </arrange>
+            <assert> Figure rectangle with parameters: area = 12.0, material = paper </assert>
+        </member>
+        <member name="M:Task3.Tests.FigureTests.CreateRectangle_LengthAndWidthIsPositiveMaterialPaperPainted_ArgumentException">
+            <summary> Create rectangle. </summary>
+            <arrange> 
+            length = 5.0;
+            width = 3.0
+            Material = Paper;
+            Color = Blue;
+            </arrange>
+            <assert> Figure rectangle with parameters: area = 15.0, material = paper, color = blue </assert>
+        </member>
+        <member name="M:Task3.Tests.FigureTests.CreateSquare_SideIsZeroMaterialFilm_ArgumentException">
+            <summary> Create square. </summary>
+            <arrange> 
+            Side = 0.0;
+            Material = Film;
+            </arrange>
+            <assert> Argument exception: The side of the square can not be equal zero or be less than zero. </assert>
+        </member>
+        <member name="M:Task3.Tests.FigureTests.CreateSquare_SideIsZeroMaterialPaper_ArgumentException">
+            <summary> Create square. </summary>
+            <arrange> 
+            Side = 0.0;
+            Material = Paper;
+            </arrange>
+            <assert> Argument exception: The side of the square can not be equal zero or be less than zero. </assert>
+        </member>
+        <member name="M:Task3.Tests.FigureTests.CreateSquare_SideIsZeroMaterialPaperPainted_ArgumentException">
+            <summary> Create square. </summary>
+            <arrange> 
+            Side = 0.0;
+            Material = Paper;
+            Color = Orange;
+            </arrange>
+            <assert> Argument exception: The side of the square can not be equal zero or be less than zero. </assert>
+        </member>
+        <member name="M:Task3.Tests.FigureTests.CreateSquare_SideIsNegativeMaterialFilm_ArgumentException">
+            <summary> Create square. </summary>
+            <arrange> 
+            Side = -5.0;
+            Material = Film;
+            </arrange>
+            <assert> Argument exception: The side of the square can not be equal zero or be less than zero. </assert>
+        </member>
+        <member name="M:Task3.Tests.FigureTests.CreateSquare_SideIsNegativeMaterialPaper_ArgumentException">
+            <summary> Create square. </summary>
+            <arrange> 
+            Side = -3.2;
+            Material = Paper;
+            </arrange>
+            <assert> Argument exception: The side of the square can not be equal zero or be less than zero. </assert>
+        </member>
+        <member name="M:Task3.Tests.FigureTests.CreateSquare_SideIsNegativeMaterialPaperPainted_ArgumentException">
+            <summary> Create square. </summary>
+            <arrange> 
+            Side = -0.1;
+            Material = Paper;
+            Color = Green;
+            </arrange>
+            <assert> Argument exception: The side of the square can not be equal zero or be less than zero. </assert>
+        </member>
+        <member name="M:Task3.Tests.FigureTests.CreateSquare_SideIsPositiveMaterialFilm_ArgumentException">
+            <summary> Create square. </summary>
+            <arrange> 
+            Side = 2.5;
+            Material = Film;
+            </arrange>
+            <assert> Figure square with parameters: area = 6.25, material = film </assert>
+        </member>
+        <member name="M:Task3.Tests.FigureTests.CreateSquare_SideIsPositiveMaterialPaper_ArgumentException">
+            <summary> Create square. </summary>
+            <arrange> 
+            Side = 0.1;
+            Material = Paper;
+            </arrange>
+            <assert> Figure square with parameters: area = 0.01, material = paper </assert>
+        </member>
+        <member name="M:Task3.Tests.FigureTests.CreateSquare_SideIsPositiveMaterialPaperPainted_ArgumentException">
+            <summary> Create square. </summary>
+            <arrange> 
+            Side = 12.1;
+            Material = Paper;
+            Color = Red;
+            </arrange>
+            <assert> Figure square with parameters: area = 146.41, material = paper, color = red </assert>
+        </member>
+        <member name="M:Task3.Tests.FigureTests.CreateTrapezium_BaseAorBaseBorHeightIsZeroMaterialFilm_ArgumentException">
+            <summary> Create isosceles trapezium. </summary>
+            <arrange> 
+            baseA = 0.0
+            baseB = 2.0
+            heigth = 3.0
+            Material = Film
+            </arrange>
+            <assert> Argument exception: The baseA or baseB or height of the trapezium can not be equal zero or be less than zero. </assert>
+        </member>
+        <member name="M:Task3.Tests.FigureTests.CreateTrapezium_BaseAorBaseBorHeightIsZeroMaterialPaper_ArgumentException">
+            <summary> Create isosceles trapezium. </summary>
+            <arrange> 
+            baseA = 2.0
+            baseB = 0.0
+            heigth = 3.0
+            Material = Paper
+            </arrange>
+            <assert> Argument exception: The baseA or baseB or height of the trapezium can not be equal zero or be less than zero. </assert>
+        </member>
+        <member name="M:Task3.Tests.FigureTests.CreateTrapezium_BaseAorBaseBorHeightIsZeroMaterialPaperPainted_ArgumentException">
+            <summary> Create isosceles trapezium. </summary>
+            <arrange> 
+            baseA = 3.0
+            baseB = 2.0
+            heigth = 0.0
+            Material = Paper
+            Color = Blue
+            </arrange>
+            <assert> Argument exception: The baseA or baseB or height of the trapezium can not be equal zero or be less than zero. </assert>
+        </member>
+        <member name="M:Task3.Tests.FigureTests.CreateTrapezium_BaseAorBaseBorHeightIsNegativeMaterialFilm_ArgumentException">
+            <summary> Create isosceles trapezium. </summary>
+            <arrange> 
+            baseA = -3.0
+            baseB = 2.0
+            heigth = 5.0
+            Material = Film
+            </arrange>
+            <assert> Argument exception: The baseA or baseB or height of the trapezium can not be equal zero or be less than zero. </assert>
+        </member>
+        <member name="M:Task3.Tests.FigureTests.CreateTrapezium_BaseAorBaseBorHeightIsNegativeMaterialPaper_ArgumentException">
+            <summary> Create isosceles trapezium. </summary>
+            <arrange> 
+            baseA = 3.0
+            baseB = -2.0
+            heigth = 5.0
+            Material = Paper
+            </arrange>
+            <assert> Argument exception: The baseA or baseB or height of the trapezium can not be equal zero or be less than zero. </assert>
+        </member>
+        <member name="M:Task3.Tests.FigureTests.CreateTrapezium_BaseAorBaseBorHeightIsNegativeMaterialPaperPainted_ArgumentException">
+            <summary> Create isosceles trapezium. </summary>
+            <arrange> 
+            baseA = 3.0
+            baseB = 2.0
+            heigth = -5.0
+            Material = Paper
+            Color = Yellow
+            </arrange>
+            <assert> Argument exception: The baseA or baseB or height of the trapezium can not be equal zero or be less than zero. </assert>
+        </member>
+        <member name="M:Task3.Tests.FigureTests.CreateTrapezium_BaseAandBaseBandHeightIsPositiveMaterialFilm">
+            <summary> Create isosceles trapezium. </summary>
+            <arrange> 
+            baseA = 3.0
+            baseB = 2.0
+            heigth = 5.0
+            Material = Film
+            </arrange>
+            <assert> Figure isosceles trapezium with parameters: area = 12.5, material = film </assert>
+        </member>
+        <member name="M:Task3.Tests.FigureTests.CreateTrapezium_BaseAandBaseBandHeightIsPositiveMaterialPaper">
+            <summary> Create isosceles trapezium. </summary>
+            <arrange> 
+            baseA = 4.0
+            baseB = 1.0
+            heigth = 2.0
+            Material = Paper
+            </arrange>
+            <assert> Figure isosceles trapezium with parameters: area = 5, material = paper </assert>
+        </member>
+        <member name="M:Task3.Tests.FigureTests.CreateTrapezium_BaseAandBaseBandHeightIsPositiveMaterialPaperPaited">
+            <summary> Create isosceles trapezium. </summary>
+            <arrange> 
+            baseA = 4.0
+            baseB = 1.0
+            heigth = 2.0
+            Material = Paper
+            </arrange>
+            <assert> Figure isosceles trapezium with parameters: area = 5, material = paper, color = orange </assert>
+        </member>
+        <member name="M:Task3.Tests.FigureTests.CreateTrapezium_BaseBGreaterThanBaseA_ArgumentException">
+            <summary> Create isosceles trapezium. </summary>
+            <arrange> 
+            baseA = 2.0
+            baseB = 3.0
+            heigth = 5.0
+            Material = Film
+            </arrange>
+            <assert> Argument exception: The baseA or baseB or height of the trapezium can not be equal zero or be less than zero. </assert>
+        </member>
+        <member name="M:Task3.Tests.FigureTests.CreateTriangle_SideAorSideBorSideCIsZeroMaterialFilm_ArgumentException">
+            <summary> Create equilateral triangle. </summary>
+            <arrange> 
+            sideA = 0.0
+            sideB = 2.0
+            sideC = 2.0
+            Material = Film
+            </arrange>
+            <assert> Argument exception: The sideA, sideB, sideC of the triangle can not be equal zero or be less than zero. </assert>
+        </member>
+        <member name="M:Task3.Tests.FigureTests.CreateTriangle_SideAorSideBorSideCIsZeroMaterialPaper_ArgumentException">
+            <summary> Create equilateral triangle. </summary>
+            <arrange> 
+            sideA = 2.0
+            sideB = 0.0
+            sideC = 2.0
+            Material = Paper
+            </arrange>
+            <assert> Argument exception: The sideA, sideB, sideC of the triangle can not be equal zero or be less than zero. </assert>
+        </member>
+        <member name="M:Task3.Tests.FigureTests.CreateTriangle_SideAorSideBorSideCIsZeroMaterialPaperPainted_ArgumentException">
+            <summary> Create equilateral triangle. </summary>
+            <arrange> 
+            sideA = 2.0
+            sideB = 2.0
+            sideC = 0.0
+            Material = Paper
+            Color = Green
+            </arrange>
+            <assert> Argument exception: The sideA, sideB, sideC of the triangle can not be equal zero or be less than zero. </assert>
+        </member>
+        <member name="M:Task3.Tests.FigureTests.CreateTriangle_SideAorSideBorSideCIsNegativeMaterialFilm_ArgumentException">
+            <summary> Create equilateral triangle. </summary>
+            <arrange> 
+            sideA = -2.0
+            sideB = 2.0
+            sideC = 2.0
+            Material = Film
+            </arrange>
+            <assert> Argument exception: The sideA, sideB, sideC of the triangle can not be equal zero or be less than zero. </assert>
+        </member>
+        <member name="M:Task3.Tests.FigureTests.CreateTriangle_SideAorSideBorSideCIsNegativeMaterialPaper_ArgumentException">
+            <summary> Create equilateral triangle. </summary>
+            <arrange> 
+            sideA = 2.0
+            sideB = -2.0
+            sideC = 2.0
+            Material = Paper
+            </arrange>
+            <assert> Argument exception: The sideA, sideB, sideC of the triangle can not be equal zero or be less than zero. </assert>
+        </member>
+        <member name="M:Task3.Tests.FigureTests.CreateTriangle_SideAorSideBorSideCIsNegativeMaterialPaperPainted_ArgumentException">
+            <summary> Create equilateral triangle. </summary>
+            <arrange> 
+            sideA = 2.0
+            sideB = 2.0
+            sideC = -2.0
+            Material = Paper
+            Color = Blue
+            </arrange>
+            <assert> Argument exception: The sideA, sideB, sideC of the triangle can not be equal zero or be less than zero. </assert>
+        </member>
+        <member name="M:Task3.Tests.FigureTests.CreateTriangle_SidesAreNotEqual_ArgumentException">
+            <summary> Create equilateral triangle. </summary>
+            <arrange> 
+            sideA = 2.0
+            sideB = 2.0
+            sideC = 1.0
+            Material = Paper
+            Color = Blue
+            </arrange>
+            <assert> Argument exception: Equilateral triangle sides should be equal. </assert>
+        </member>
+        <member name="M:Task3.Tests.FigureTests.CreateTriangle_SidesIsPositiveMaterialFilm">
+            <summary> Create equilateral triangle. </summary>
+            <arrange> 
+            sideA = 3.0
+            sideB = 3.0
+            sideC = 3.0
+            Material = Film
+            </arrange>
+            <assert> Figure equilateral triangle with parameters: area = 3.8971.. , material = film </assert>
+        </member>
+        <member name="M:Task3.Tests.FigureTests.CreateTriangle_SidesIsPositiveMaterialPaper">
+            <summary> Create equilateral triangle. </summary>
+            <arrange> 
+            sideA = 3.0
+            sideB = 3.0
+            sideC = 3.0
+            Material = Paper
+            </arrange>
+            <assert> Figure equilateral triangle with parameters: area = 3.8971.. , material = paper </assert>
+        </member>
+        <member name="M:Task3.Tests.FigureTests.CreateTriangle_SidesIsPositiveMaterialPaperPainted">
+            <summary> Create equilateral triangle. </summary>
+            <arrange> 
+            sideA = 3.0
+            sideB = 3.0
+            sideC = 3.0
+            Material = Paper
+            Color = Orange
+            </arrange>
+            <assert> Figure equilateral triangle with parameters: area = 3.8971.. , material = paper </assert>
+        </member>
+    </members>
+</doc>

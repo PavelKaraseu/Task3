@@ -1,0 +1,654 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Task3</name>
+    </assembly>
+    <members>
+        <member name="T:Task3.Materials">
+            <summary> Materials from which you can cut a figure. Implemented as enum.</summary>
+        </member>
+        <member name="F:Task3.Materials.Paper">
+            <summary> Paper material. </summary>
+        </member>
+        <member name="F:Task3.Materials.Film">
+            <summary> Film material. </summary>
+        </member>
+        <member name="T:Task3.Colors">
+            <summary> Сolors that can be used to color the figure. Implemented as enum. </summary>
+        </member>
+        <member name="F:Task3.Colors.Transparent">
+            <summary> Lack of color. </summary>
+        </member>
+        <member name="F:Task3.Colors.White">
+            <summary> The white color. </summary>
+        </member>
+        <member name="F:Task3.Colors.Green">
+            <summary> The green color. </summary>
+        </member>
+        <member name="F:Task3.Colors.Red">
+            <summary> The red color. </summary>
+        </member>
+        <member name="F:Task3.Colors.Blue">
+            <summary> The blue color. </summary>
+        </member>
+        <member name="F:Task3.Colors.Yellow">
+            <summary> The yellow color. </summary>
+        </member>
+        <member name="F:Task3.Colors.Orange">
+            <summary> The orange color. </summary>
+        </member>
+        <member name="T:Task3.Figure">
+            <summary> Class describing a figure. </summary>
+        </member>
+        <member name="P:Task3.Figure.Color">
+            <summary> Gets the color. </summary>
+            <value> The color of the figure. </value>
+        </member>
+        <member name="P:Task3.Figure.Material">
+            <summary> Gets the material. </summary>
+            <value> The material of the figure. </value>
+        </member>
+        <member name="P:Task3.Figure.Shape">
+            <summary> Gets the shape of the figure. </summary>
+            <value> The shape of the figure. </value>
+        </member>
+        <member name="F:Task3.Figure.painted">
+            <summary> Variable indicating whether the figure was painted. </summary>
+        </member>
+        <member name="F:Task3.Figure.cutOut">
+            <summary> Variable indicating whether the figure was cut. </summary>
+        </member>
+        <member name="M:Task3.Figure.#ctor(Task3.Shape,Task3.Materials)">
+            <summary> Initializes a new instance of the <see cref="T:Task3.Figure"/> class. </summary>
+            <param name="shape"> The shape of the figure. </param>
+            <param name="material"> The material of the figure. </param>
+        </member>
+        <member name="M:Task3.Figure.Paint(Task3.Colors)">
+            <summary> Paints a figure in a given color. </summary>
+            <remarks> 
+            A paper figure can only be painted once. 
+            A film figure can not be painted.
+            </remarks>
+            <param name="color"> The color in which the figure will be painted. </param>
+            <exception cref="T:System.Exception">
+            You can paint a paper figure only once.
+            or
+            The film can not be painted. 
+            </exception>
+        </member>
+        <member name="M:Task3.Figure.Cut(Task3.Shape)">
+            <summary> Cuts a given shape. </summary>
+            <param name="shape"> The required shape. </param>
+            <returns> 
+            If the shape can be cut, returns a new instance of the figure 
+            with the specified parameters. </returns>
+            <exception cref="T:System.Exception"> You can cut a figure only once. </exception>
+        </member>
+        <member name="M:Task3.Figure.WriteToXml(System.IO.StreamWriter)">
+            <summary> Writes figure to xml file. </summary>
+            <param name="streamWriter"> The StreamWriter instance. </param>
+        </member>
+        <member name="M:Task3.Figure.WriteToXml(System.Xml.XmlWriter)">
+            <summary> Writes figure to xml file. </summary>
+            <param name="xmlWriter"> The XmlWriter instance. </param>
+        </member>
+        <member name="M:Task3.Figure.ToString">
+            <summary> Represents a figure as a string. Overriden method. </summary>
+            <returns> A <see cref="T:System.String" /> that represents this instance. </returns>
+        </member>
+        <member name="M:Task3.Figure.Equals(System.Object)">
+            <summary> Determines whether the specified <see cref="T:System.Object"/>, is equal to this instance. Overriden method. </summary>
+            <param name="obj"> The <see cref="T:System.Object"/> to compare with this instance. </param>
+            <returns>
+                <c> true </c> If the specified <see cref="T:System.Object"/> is equal to this instance; otherwise, <c> false </c>. 
+            </returns>
+        </member>
+        <member name="M:Task3.Figure.GetHashCode">
+            <summary> Hash code for this instance. Overridden method. </summary>
+            <returns> 
+            New algorithm hashCode = hashCode * hash + (variable hash code (Shape, Color, Material))
+            </returns>
+        </member>
+        <member name="T:Task3.FigureExceptions">
+            <summary> Custom exception class for figures </summary>
+        </member>
+        <member name="T:Task3.FigureExceptions.CutException">
+            <summary> An exception that occurs when cutting a figure. </summary>
+            <seealso cref="T:System.Exception" />
+        </member>
+        <member name="M:Task3.FigureExceptions.CutException.#ctor(System.String)">
+            <summary> Initializes a new instance of the <see cref="T:Task3.FigureExceptions.CutException"/> class. </summary>
+            <param name="message"> The message that describes the error. </param>
+        </member>
+        <member name="T:Task3.FigureExceptions.PaintException">
+            <summary> An exception that occurs when painting a figure. </summary>
+            <seealso cref="T:System.Exception" />
+        </member>
+        <member name="M:Task3.FigureExceptions.PaintException.#ctor(System.String)">
+            <summary> Initializes a new instance of the <see cref="T:Task3.FigureExceptions.PaintException"/> class. </summary>
+            <param name="message"> The message that describes the error. </param>
+        </member>
+        <member name="T:Task3.FiguresBox">
+            <summary> Singleton class describing a box with figures. Box is designed for 20 figures </summary>
+        </member>
+        <member name="F:Task3.FiguresBox.figures">
+            <summary> The figures list. </summary>
+        </member>
+        <member name="M:Task3.FiguresBox.#ctor">
+            <summary> Prevents a default instance of the <see cref="T:Task3.FiguresBox"/> class from being created. </summary>
+        </member>
+        <member name="F:Task3.FiguresBox.instance">
+            <summary> Singleton object stored in a static field. </summary>
+        </member>
+        <member name="M:Task3.FiguresBox.GetInstance">
+            <summary> Access to an instance of a Singleton. </summary>
+        </member>
+        <member name="M:Task3.FiguresBox.ClearBox">
+            <summary> Clear the figures box. </summary>
+        </member>
+        <member name="M:Task3.FiguresBox.AddFigure(Task3.Figure)">
+            <summary> Adds the figure. </summary>
+            <remarks> Unable to add a figure with the same characteristics. </remarks>
+            <param name="figure"> The figure. </param>
+            <exception cref="T:System.Exception">
+            The figure with such characteristics already exists.
+            or
+            The box is full. Remove figures and try again. 
+            </exception>
+        </member>
+        <member name="M:Task3.FiguresBox.ShowFigureByNumber(System.Int32)">
+            <summary> Shows the figure by number. </summary>
+            <param name="number"> The number of a figure. </param>
+            <returns> Figure by number. </returns>
+            <exception cref="T:System.Exception"> Figures with this number do not exist. </exception>
+        </member>
+        <member name="M:Task3.FiguresBox.RemoveFigureByNumber(System.Int32)">
+            <summary> Removes the figure by number. </summary>
+            <param name="number"> The number of a figure. </param>
+            <exception cref="T:System.Exception"> Figures with this number do not exist. </exception>
+        </member>
+        <member name="M:Task3.FiguresBox.RemoveAllCircles">
+            <summary> Removes all circles. </summary>
+        </member>
+        <member name="M:Task3.FiguresBox.RemoveAllFilmFigures">
+            <summary> Removes all film figures. </summary>
+        </member>
+        <member name="M:Task3.FiguresBox.ReplaceFigureByNumber(Task3.Figure,System.Int32)">
+            <summary> Replaces the figure by number. </summary>
+            <param name="figure"> Replacement figure. </param>
+            <param name="number"> Number of the replaced figure. </param>
+            <exception cref="T:System.Exception"> Figures with this number do not exist. </exception>
+        </member>
+        <member name="M:Task3.FiguresBox.FindEquivalentFigure(Task3.Figure)">
+            <summary> Finds the equivalent figure. </summary>
+            <param name="figure"> Sample figure. </param>
+            <returns> Equivalent figure if found. </returns>
+            <exception cref="T:System.Exception"> Equivalent figure not found. </exception>
+        </member>
+        <member name="M:Task3.FiguresBox.ShowQuantityFigures">
+            <summary> Shows the quantity figures. </summary>
+            <returns> Quantity figures. </returns>
+        </member>
+        <member name="M:Task3.FiguresBox.GetTotalArea">
+            <summary> Gets the total area of the figures in the box. </summary>
+            <returns> Total area. </returns>
+        </member>
+        <member name="M:Task3.FiguresBox.GetTotalPerimeter">
+            <summary> Gets the total perimeter of the figures in the box. </summary>
+            <returns> Total perimeter. </returns>
+        </member>
+        <member name="M:Task3.FiguresBox.WriteToXmlWithXmlWriter(System.String)">
+            <summary> Writes shapes out of the box to an xml file with XmlWriter. </summary>
+        </member>
+        <member name="M:Task3.FiguresBox.WriteToXmlWithStreamWriter(System.String)">
+            <summary> Writes shapes out of the box to an xml file with StreamWriter. </summary>
+        </member>
+        <member name="M:Task3.FiguresBox.ReadFromXmlWithXmlReader(System.String)">
+            <summary> Read shapes from xml file with XmlReader. 
+            The values ​​are read from the tags and, depending on the shape of the figure, 
+            an instance of the corresponding figure is created and placed in a box.
+            </summary>
+        </member>
+        <member name="M:Task3.FiguresBox.ReadFromXmlWithStreamReader(System.String)">
+            <summary> Read shapes from xml file with StreamReader.
+            The values ​​are read from the tags and, depending on the shape of the figure, 
+            an instance of the corresponding figure is created and placed in a box.
+            </summary>
+        </member>
+        <member name="T:Task3.Circle">
+            <summary> Class describing a circle. </summary>
+            <seealso cref="T:Task3.Shape" />
+        </member>
+        <member name="P:Task3.Circle.Radius">
+            <summary> Gets the radius. </summary>
+            <value> The radius of the circle. </value>
+        </member>
+        <member name="M:Task3.Circle.#ctor(System.Double)">
+            <summary> Initializes a new instance of the <see cref="T:Task3.Circle"/> class. </summary>
+            <remarks> 
+            When entering very large values for radius ​​when calculating the area or perimeter, a situation is possible 
+            with obtaining the result in the form of double.Infinity
+            </remarks>
+            <param name="radius"> The radius of the circle. </param>
+            <exception cref="T:System.ArgumentException"> The radius of the circle can not be equal zero or be less than zero. </exception>
+        </member>
+        <member name="M:Task3.Circle.CutCheck(Task3.Shape)">
+            <summary> Checking whether it is possible to cut the desired shape from the current shape. </summary>
+            <remarks>
+            When checking the possibility of cutting, the figure is superimposed on the original 
+            and is in a static state. 
+            </remarks>
+            <param name="shape"> Desired shape. </param>
+            <exception cref="T:System.Exception">
+            You can not cut such a circle. Try with a smaller circle.
+            or
+            You can not cut such a rectangle. Try with a smaller rectangle.
+            or
+            You can not cut such a square. Try with a smaller square.
+            or
+            You can not cut such a trapezium. Try with a smaller trapezium.
+            or
+            You can not cut such a triangle. Try with a smaller triangle.
+            </exception>
+        </member>
+        <member name="M:Task3.Circle.GetArea">
+            <summary> Сircle area calculation. </summary>
+            <returns> The circle area. </returns>
+        </member>
+        <member name="M:Task3.Circle.GetPerimeter">
+            <summary> Сircle perimeter calculation. </summary>
+            <returns> The circle perimeter. </returns>
+        </member>
+        <member name="M:Task3.Circle.WriteToXml(System.Xml.XmlWriter)">
+            <summary> Writes shape to xml file. </summary>
+            <param name="xmlWriter"> The XmlWriter instance. </param>
+        </member>
+        <member name="M:Task3.Circle.WriteToXml(System.IO.StreamWriter)">
+            <summary> Writes shape to xml file. </summary>
+            <param name="streamWriter"> The streamWriter instance. </param>
+        </member>
+        <member name="M:Task3.Circle.ToString">
+            <summary> Represents a shape as a string. Overriden method. </summary>
+            <returns> A <see cref="T:System.String"/> that represents this instance. Return shape as string. </returns>
+        </member>
+        <member name="M:Task3.Circle.Equals(System.Object)">
+            <summary> Determines whether the specified <see cref="T:System.Object"/>, is equal to this instance. Overriden method. </summary>
+            <param name="obj"> The <see cref="T:System.Object"/> to compare with this instance. </param>
+            <returns>
+                <c> true </c> If the specified <see cref="T:System.Object"/> is equal to this instance; otherwise, <c> false </c>. 
+            </returns>
+        </member>
+        <member name="M:Task3.Circle.GetHashCode">
+            <summary> Hash code for this instance. Overridden method. </summary>
+            <returns> 
+            New algorithm hashCode = hashCode * hash + (variable hash code (Radius))
+            </returns>
+        </member>
+        <member name="T:Task3.Rectangle">
+            <summary> Class describing a rectangle. </summary>
+            <seealso cref="T:Task3.Shape" />
+        </member>
+        <member name="P:Task3.Rectangle.Length">
+            <summary> Gets the length. </summary>
+            <value> The length of the rectangle. </value>
+        </member>
+        <member name="P:Task3.Rectangle.Width">
+            <summary> Gets the width. </summary>
+            <value> The width of the rectangle. </value>
+        </member>
+        <member name="M:Task3.Rectangle.#ctor(System.Double,System.Double)">
+            <summary> Initializes a new instance of the <see cref="T:Task3.Rectangle"/> class. </summary>
+            <remarks> 
+            When entering very large values for length or/and width ​​when calculating the area or perimeter, a situation is possible 
+            with obtaining the result in the form of double.Infinity
+            </remarks>
+            <param name="length"> The length of the rectangle. </param>
+            <param name="width"> The width of the rectangle. </param>
+            <exception cref="T:System.ArgumentException">
+            The length and width of the rectangle can not be equal and lenght should be more than width.
+            or
+            The length or width of the rectangle can not be equal zero or be less than zero.
+            </exception>
+        </member>
+        <member name="M:Task3.Rectangle.CutCheck(Task3.Shape)">
+            <summary> Checking whether it is possible to cut the desired shape from the current shape. </summary>
+            <remarks> 
+            When checking the possibility of cutting, the figure is superimposed on the original 
+            and is in a static state. 
+            </remarks>
+            <param name="shape"> Desired shape. </param>
+            <exception cref="T:System.Exception">
+            You can not cut such a circle. Try with a smaller circle.
+            or
+            You can not cut such a rectangle. Try with a smaller rectangle.
+            or
+            You can not cut such a square. Try with a smaller square.
+            or
+            You can not cut such a trapezium. Try with a smaller trapezium.
+            or
+            You can not cut such a triangle. Try with a smaller triangle.
+            </exception>
+        </member>
+        <member name="M:Task3.Rectangle.GetArea">
+            <summary> Rectangle area calculation. </summary>
+            <returns> The rectangle area. </returns>
+        </member>
+        <member name="M:Task3.Rectangle.GetPerimeter">
+            <summary> Rectangle perimeter calculation. </summary>
+            <returns> The rectangle perimeter. </returns>
+        </member>
+        <member name="M:Task3.Rectangle.GetCircleRadius">
+            <summary> Calculation of the radius of the circumscribed circle of the rectangle. </summary>
+            <returns> Radius of the circumscribed circle of the rectangle. </returns>
+        </member>
+        <member name="M:Task3.Rectangle.WriteToXml(System.Xml.XmlWriter)">
+            <summary>  Writes shape to xml file. </summary>
+            <param name="xmlWriter"> The XmlWriter instance. </param>
+        </member>
+        <member name="M:Task3.Rectangle.WriteToXml(System.IO.StreamWriter)">
+            <summary> Writes shape to xml file. </summary>
+            <param name="streamWriter"> The streamWriter instance. </param>
+        </member>
+        <member name="M:Task3.Rectangle.ToString">
+            <summary> Represents a shape as a string. Overriden method. </summary>
+            <returns>A <see cref="T:System.String"/> that represents this instance. Return shape as string. </returns>
+        </member>
+        <member name="M:Task3.Rectangle.Equals(System.Object)">
+            <summary> Determines whether the specified <see cref="T:System.Object"/>, is equal to this instance. Overriden method. </summary>
+            <param name="obj"> The <see cref="T:System.Object"/> to compare with this instance. </param>
+            <returns>
+                <c> true </c> If the specified <see cref="T:System.Object"/> is equal to this instance; otherwise, <c> false </c>. 
+            </returns>
+        </member>
+        <member name="M:Task3.Rectangle.GetHashCode">
+            <summary> Hash code for this instance. Overridden method. </summary>
+            <returns> 
+            New algorithm hashCode = hashCode * hash + (variable hash code (Length, Width))
+            </returns>
+        </member>
+        <member name="T:Task3.Shape">
+            <summary> An abstract class for describing the shape of a figure. </summary>
+        </member>
+        <member name="M:Task3.Shape.GetArea">
+            <summary> Gets the area. </summary>
+            <returns> Area of some shape. </returns>
+        </member>
+        <member name="M:Task3.Shape.GetPerimeter">
+            <summary> Gets the perimeter. </summary>
+            <returns> Perimeter of some shape. </returns>
+        </member>
+        <member name="M:Task3.Shape.CutCheck(Task3.Shape)">
+            <summary> Checking whether it is possible to cut the desired shape from the current shape. </summary>
+            <returns> True, if possible, false if not. </returns>
+        </member>
+        <member name="M:Task3.Shape.WriteToXml(System.Xml.XmlWriter)">
+            <summary> Writes shape to xml file. </summary>
+            <param name="xmlWriter"> The XmlWriter instance. </param>
+        </member>
+        <member name="M:Task3.Shape.WriteToXml(System.IO.StreamWriter)">
+            <summary> Writes shape to xml file. </summary>
+            <param name="streamWriter"> The streamWriter instance. </param>
+        </member>
+        <member name="T:Task3.Square">
+            <summary> Class describing a square. </summary>
+            <seealso cref="T:Task3.Shape" />
+        </member>
+        <member name="P:Task3.Square.Side">
+            <summary> Gets the side. </summary>
+            <value> The side of the square. </value>
+        </member>
+        <member name="M:Task3.Square.#ctor(System.Double)">
+            <summary> Initializes a new instance of the <see cref="T:Task3.Square"/> class. </summary>
+            <remarks> 
+            When entering very large values for side ​​when calculating the area or perimeter, a situation is possible 
+            with obtaining the result in the form of double.Infinity
+            </remarks>
+            <param name="side"> The side of the square. </param>
+            <exception cref="T:System.ArgumentException"> The side of the square can not be equal zero or be less than zero. </exception>
+        </member>
+        <member name="M:Task3.Square.CutCheck(Task3.Shape)">
+            <summary> Checking whether it is possible to cut the desired shape from the current shape. </summary>
+            <param name="shape"> Desired shape. </param>
+            <exception cref="T:System.Exception">
+            You can not cut such a circle. Try with a smaller circle.
+            or
+            You can not cut such a rectangle. Try with a smaller rectangle.
+            or
+            You can not cut such a square. Try with a smaller square.
+            or
+            You can not cut such a trapezium. Try with a smaller trapezium.
+            or
+            You can not cut such a triangle. Try with a smaller triangle.
+            </exception>
+        </member>
+        <member name="M:Task3.Square.GetArea">
+            <summary> Square area calculation. </summary>
+            <returns> The square area. </returns>
+        </member>
+        <member name="M:Task3.Square.GetPerimeter">
+            <summary> Square perimeter calculation. </summary>
+            <returns> The square perimeter. </returns>
+        </member>
+        <member name="M:Task3.Square.GetCircleRadius">
+            <summary> Calculation of the radius of the circumscribed circle of the square. </summary>
+            <returns> Radius of the circumscribed circle of the square. </returns>
+        </member>
+        <member name="M:Task3.Square.WriteToXml(System.Xml.XmlWriter)">
+            <summary> Writes shape to xml file. </summary>
+            <param name="xmlWriter"> The XmlWriter instance. </param>
+        </member>
+        <member name="M:Task3.Square.WriteToXml(System.IO.StreamWriter)">
+            <summary> Writes shape to xml file. </summary>
+            <param name="streamWriter"> The streamWriter instance. </param>
+        </member>
+        <member name="M:Task3.Square.ToString">
+            <summary> Represents a shape as a string. Overriden method. </summary>
+            <returns>A <see cref="T:System.String"/> that represents this instance. Return shape as string. </returns>
+        </member>
+        <member name="M:Task3.Square.Equals(System.Object)">
+            <summary> Determines whether the specified <see cref="T:System.Object"/>, is equal to this instance. Overriden method. </summary>
+            <param name="obj"> The <see cref="T:System.Object"/> to compare with this instance. </param>
+            <returns>
+                <c> true </c> If the specified <see cref="T:System.Object"/> is equal to this instance; otherwise, <c> false </c>. 
+            </returns>
+        </member>
+        <member name="M:Task3.Square.GetHashCode">
+            <summary> Hash code for this instance. Overridden method. </summary>
+            <returns> 
+            New algorithm hashCode = hashCode * hash + (variable hash code (Side))
+            </returns>
+        </member>
+        <member name="T:Task3.Trapezium">
+            <summary> Class describing a isosceles trapezium. </summary>
+            <seealso cref="T:Task3.Shape" />
+        </member>
+        <member name="P:Task3.Trapezium.BaseA">
+            <summary> Gets the base A. </summary>
+            <value> The base A of the trapezium. </value>
+        </member>
+        <member name="P:Task3.Trapezium.BaseB">
+            <summary> Gets the base B. </summary>
+            <value> The base B of the trapezium. </value>
+        </member>
+        <member name="P:Task3.Trapezium.Side">
+            <summary> Gets the side. </summary>
+            <value> The side of the trapezium. </value>
+        </member>
+        <member name="P:Task3.Trapezium.Height">
+            <summary> Gets the height. </summary>
+            <value> The height of the trapezium. </value>
+        </member>
+        <member name="P:Task3.Trapezium.AngleA">
+            <summary> Gets the angle A. </summary>
+            <value> The angle A of the trapezium. </value>
+        </member>
+        <member name="M:Task3.Trapezium.#ctor(System.Double,System.Double,System.Double)">
+            <summary> Initializes a new instance of the <see cref="T:Task3.Trapezium"/> class. </summary>
+            <remarks> 
+            When entering very large values for base A or/and base B or/and height ​​when calculating the area or perimeter, 
+            a situation is possible with obtaining the result in the form of double.Infinity
+            </remarks>
+            <param name="baseA"> The base A of the trapezium.</param>
+            <param name="baseB"> The base B of the trapezium.</param>
+            <param name="height"> The height of the trapezium.</param>
+            <exception cref="T:System.ArgumentException"> The baseA or baseB or height of the trapezium can not be equal zero or be less than zero.
+            or
+            The base A should be more than base B. </exception>
+        </member>
+        <member name="M:Task3.Trapezium.CutCheck(Task3.Shape)">
+            <summary> Checking whether it is possible to cut the desired shape from the current shape. </summary>
+            <remarks>
+            When checking the possibility of cutting, the figure is superimposed on the original 
+            and is in a static state. 
+            </remarks>
+            <param name="shape"> Desired shape. </param>
+            <exception cref="T:System.Exception">
+            You can not cut such a circle. Try with a smaller circle.
+            or
+            You can not cut such a rectangle. Try with a smaller rectangle.
+            or
+            You can not cut such a square. Try with a smaller rectangle.
+            or
+            You can not cut such a trapezium. Try with a smaller trapezium.
+            or
+            You can not cut such a triangle. Try with a smaller triangle.
+            </exception>
+        </member>
+        <member name="M:Task3.Trapezium.GetArea">
+            <summary> Trapezium area calculation. </summary>
+            <returns> The trapezium area. </returns>
+        </member>
+        <member name="M:Task3.Trapezium.GetPerimeter">
+            <summary> Trapezium perimeter calculation. </summary>
+            <returns> The trapezium perimeter. </returns>
+        </member>
+        <member name="M:Task3.Trapezium.GetDiagonale">
+            <summary> Trapezium diagonale calculation. </summary>
+            <returns> The trapezium diagonale. </returns>
+        </member>
+        <member name="M:Task3.Trapezium.GetHalfPerimeterTriangle">
+            <summary> Trapezium half perimeter calculation. </summary>
+            <returns> The trapezium half perimeter. </returns>
+        </member>
+        <member name="M:Task3.Trapezium.GetCircleRadius">
+            <summary> Calculation of the radius of the circumscribed circle of the trapezium. </summary>
+            <returns> Radius of the circumscribed circle of the trapezium. </returns>
+        </member>
+        <member name="M:Task3.Trapezium.WriteToXml(System.Xml.XmlWriter)">
+            <summary> Writes shape to xml file. </summary>
+            <param name="xmlWriter"> The XmlWriter instance. </param>
+        </member>
+        <member name="M:Task3.Trapezium.WriteToXml(System.IO.StreamWriter)">
+            <summary> Writes shape to xml file. </summary>
+            <param name="streamWriter"> The streamWriter instance. </param>
+        </member>
+        <member name="M:Task3.Trapezium.ToString">
+            <summary> Represents a shape as a string. Overriden method. </summary>
+            <returns> A <see cref="T:System.String"/> that represents this instance. Return shape as string. </returns>
+        </member>
+        <member name="M:Task3.Trapezium.Equals(System.Object)">
+            <summary> Determines whether the specified <see cref="T:System.Object"/>, is equal to this instance. Overriden method. </summary>
+            <param name="obj"> The <see cref="T:System.Object"/> to compare with this instance. </param>
+            <returns>
+                <c> true </c> If the specified <see cref="T:System.Object"/> is equal to this instance; otherwise, <c> false </c>. 
+            </returns>
+        </member>
+        <member name="M:Task3.Trapezium.GetHashCode">
+            <summary> Hash code for this instance. Overridden method. </summary>
+            <returns> 
+            New algorithm hashCode = hashCode * hash + (variable hash code (BaseA, BaseB, Heigth))
+            </returns>
+        </member>
+        <member name="T:Task3.Triangle">
+            <summary> Class describing an equilateral triangle. </summary>
+            <seealso cref="T:Task3.Shape" />
+        </member>
+        <member name="P:Task3.Triangle.SideA">
+            <summary> Gets the side A. </summary>
+            <value> The side A of the triangle. </value>
+        </member>
+        <member name="P:Task3.Triangle.SideB">
+            <summary> Gets the side B. </summary>
+            <value> The side B of the triangle. </value>
+        </member>
+        <member name="P:Task3.Triangle.SideC">
+            <summary> Gets the side C. </summary>
+            <value> The side C of the triangle. </value>
+        </member>
+        <member name="P:Task3.Triangle.Height">
+            <summary> Gets the height. </summary>
+            <value> The height of the triangle. </value>
+        </member>
+        <member name="F:Task3.Triangle.circleRadius">
+            <summary> Radius of a circle inscribed in a triangle. </summary>
+        </member>
+        <member name="M:Task3.Triangle.#ctor(System.Double,System.Double,System.Double)">
+            <summary> Initializes a new instance of the <see cref="T:Task3.Triangle"/> class. </summary>
+            <remarks> 
+            When entering very large values for side A or/and side B or/and side C ​​when calculating the area or perimeter, 
+            a situation is possible with obtaining the result in the form of double.Infinity
+            </remarks>
+            <param name="sideA"> The side A of the triangle. </param>
+            <param name="sideB"> The side B of the triangle. </param>
+            <param name="sideC"> The side C of the triangle. </param>
+            <exception cref="T:System.ArgumentException"> The side A, side B, side C of the triangle can not be equal zero or be less than zero, also
+            equilateral triangle sides should be equal. </exception>
+        </member>
+        <member name="M:Task3.Triangle.CutCheck(Task3.Shape)">
+            <summary> Checking whether it is possible to cut the desired shape from the current shape. </summary>
+            <remarks>
+            When checking the possibility of cutting, the figure is superimposed on the original 
+            and is in a static state. 
+            </remarks>
+            <param name="shape"> Desired shape. </param>
+            <exception cref="T:System.Exception">
+            You can not cut such a circle. Try with a smaller circle.
+            or
+            You can not cut such a rectangle. Try with a smaller rectangle.
+            or
+            You can not cut such a square. Try with a smaller square.
+            or
+            You can not cut such a trapezium. Try with a smaller trapezium.
+            or
+            You can not cut such a triangle. Try with a smaller triangle.
+            </exception>
+        </member>
+        <member name="M:Task3.Triangle.GetArea">
+            <summary> Triangle area calculation. </summary>
+            <returns> The triangle area. </returns>
+        </member>
+        <member name="M:Task3.Triangle.GetPerimeter">
+            <summary> Triangle perimeter calculation. </summary>
+            <returns> The triangle perimeter. </returns>
+        </member>
+        <member name="M:Task3.Triangle.GetCircleRadius">
+            <summary> Calculation of the radius of the circumscribed circle of the triangle. </summary>
+            <returns> Radius of the circumscribed circle of the triangle. </returns>
+        </member>
+        <member name="M:Task3.Triangle.WriteToXml(System.Xml.XmlWriter)">
+            <summary> Writes shape to xml file. </summary>
+            <param name="xmlWriter"> The XmlWriter instance. </param>
+        </member>
+        <member name="M:Task3.Triangle.WriteToXml(System.IO.StreamWriter)">
+            <summary> Writes shape to xml file. </summary>
+            <param name="streamWriter"> The streamWriter instance. </param>
+        </member>
+        <member name="M:Task3.Triangle.ToString">
+            <summary> Represents a shape as a string. Overriden method. </summary>
+            <returns>A <see cref="T:System.String"/> that represents this instance. Return shape as string. </returns>
+        </member>
+        <member name="M:Task3.Triangle.Equals(System.Object)">
+            <summary> Determines whether the specified <see cref="T:System.Object"/>, is equal to this instance. Overriden method. </summary>
+            <param name="obj"> The <see cref="T:System.Object"/> to compare with this instance. </param>
+            <returns>
+                <c> true </c> If the specified <see cref="T:System.Object"/> is equal to this instance; otherwise, <c> false </c>. 
+            </returns>
+        </member>
+        <member name="M:Task3.Triangle.GetHashCode">
+            <summary> Hash code for this instance. Overridden method. </summary>
+            <returns> 
+            New algorithm hashCode = hashCode * hash + (variable hash code (Side A * 3))
+            </returns>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>C:\Users\PavelK\source\repos\Tasks\Task3\Task3\Task3Comments.xml</DocumentationFile>
+    <OutputPath></OutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="Task3Shapes">
+      <HintPath>..\Task3Shapes\bin\Debug\netstandard2.0\Task3Shapes.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
